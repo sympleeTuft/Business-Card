@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marie Lamarre · SympleeTuft Rugs</title>
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="SympleeTuft Rugs — bespoke tufted rugs & framed textile art.">
+  <style>
+    :root {
+      --bg:#0b0b0c;
+      --ink:#f2ba2b;
+      --muted:#c9ced6;
+      --card:#121214;
+      --line:#1e1f22;
+      --text:#eef1f4;
+    }
+    * { box-sizing: border-box; }
+    html,body { height:100%; }
+    body {
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(80vmax 60vmax at 20% -10%, #1a1b1f 0, var(--bg) 60%), #000;
+    }
+
+    .wrap { max-width:860px; margin:0 auto; padding:24px; }
+
+    .card {
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, #141418, #0d0e11);
+      border-radius: 20px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.55);
+      overflow:hidden;
+      animation: fadeIn .5s ease both;
+    }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform:none; } }
+
+    /* Hero */
+    .hero {
+      display:grid;
+      grid-template-columns: 96px 1fr auto;
+      gap:16px;
+      padding:24px;
+      align-items:center;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(220px 120px at 5% 10%, rgba(242,186,43,.08), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+    .logo { width:96px; height:96px; border-radius:16px; border:2px solid #2a2a30; display:grid; place-items:center; background:#111; color:var(--ink); font-weight:800; font-size:28px; }
+    .title h1 { margin:0; font-size:1.6rem; }
+    .title .sub { color:var(--muted); margin-top:4px; }
+    .badge { display:inline-flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
+    .pill { border:1px solid #2a2a30; background:#15151a; color:#e8e9ee; border-radius:999px; padding:6px 10px; font-size:.9rem; }
+
+    .cta { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .btn {
+      appearance:none; border:1px solid #2a2a30; background:#17171d; color:#eef1f4;
+      padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700; text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    .btn.accent { background: linear-gradient(180deg, #ffdf86, var(--ink)); color:#121214; border-color:#d9a521; }
+
+    /* Sections */
+    .sections { display:grid; gap:0; }
+    section { padding:18px 24px; border-bottom:1px solid var(--line); }
+    section h2 { margin:0 0 8px; font-size:1.05rem; letter-spacing:.02em; color:#f6d991; }
+    .kv { display:grid; grid-template-columns: 160px 1fr; gap:12px; }
+    .kv .k { color:#b7bdc6; }
+    .grid-links { display:flex; gap:10px; flex-wrap:wrap; }
+    .link { border:1px solid #2a2a30; background:#17171d; border-radius:12px; padding:10px 12px; text-decoration:none; color:#e9edf2; }
+    .link:hover { border-color:#3a3a45; }
+
+    footer { padding:16px 24px; color:#9aa3ae; font-size:.9rem; }
+    .small { font-size:.92rem; color:#cbd2db; line-height:1.5; }
+
+    /* Mobile */
+    @media (max-width:640px) {
+      .hero { grid-template-columns: 72px 1fr; }
+      .cta { grid-column: 1 / -1; justify-content:flex-start; }
+      .logo { width:72px; height:72px; border-radius:12px; font-size:22px; }
+      .kv { grid-template-columns: 120px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header class="hero">
+        <div class="logo" aria-label="SympleeTuft logo">ST</div>
+        <div class="title">
+          <h1>Marie Lamarre</h1>
+          <div class="sub">Founder / Textile Artist · SympleeTuft Rugs</div>
+          <div class="badge">
+            <span class="pill">Bespoke tufted rugs</span>
+            <span class="pill">Frames & wall art</span>
+            <span class="pill">NJ · USA</span>
+          </div>
+        </div>
+        <div class="cta">
+          <a id="addContact" class="btn accent" href="#" download="sympleetuft.vcf">Add contact</a>
+          <a class="btn" href="https://sympleetuft.com" target="_blank" rel="noopener">Website</a>
+        </div>
+      </header>
+
+      <div class="sections">
+        <section aria-labelledby="contact">
+          <h2 id="contact">Contact</h2>
+          <div class="kv">
+            <div class="k">Email</div><div><a class="link" href="mailto:art@sympleeTuft.com">art@sympleeTuft.com</a></div>
+            <div class="k">Phone</div><div><a class="link" href="tel:609-610-4386">609-610-4386</a></div>
+            <div class="k">Website</div><div><a class="link" href="https://sympleetuft.com" target="_blank" rel="noopener">https://sympleetuft.com</a></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="company">
+          <h2 id="company">Company</h2>
+          <div class="small">
+            <strong>SympleeTuft Rugs</strong> — hand‑tufted rugs and framed textile art designed, tufted, carved, and finished by hand. Bold lines, playful color, soulful vibe.
+          </div>
+        </section>
+
+        <section aria-labelledby="summary">
+          <h2 id="summary">Summary</h2>
+          <div class="small">
+            Textile artist based in New Jersey. Custom commissions and limited drops available. For collabs and gallery inquiries, email or DM on Instagram.
+          </div>
+        </section>
+
+        <section aria-labelledby="social">
+          <h2 id="social">Social media</h2>
+          <div class="grid-links">
+            <a class="link" href="https://instagram.com/sympleetuft" target="_blank" rel="noopener" aria-label="Instagram">Instagram @sympleetuft</a>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <div class="small">Tap <strong>Add contact</strong> to save details instantly. Scan a QR code that points to this page to share anywhere.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Generate the vCard download from inline data (no server needed)
+    const vcardText = 'BEGIN:VCARD\nVERSION:3.0\nN:Lamarre;Marie;;;\nFN:Marie Lamarre\nORG:SympleeTuft Rugs\nTITLE:Founder / Textile Artist\nTEL;TYPE=cell:609-610-4386\nEMAIL:art@sympleeTuft.com\nURL:https://sympleetuft.com\nURL:https://instagram.com/sympleetuft\nEND:VCARD';
+    const blob = new Blob([vcardText], {type: 'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.getElementById('addContact');
+    a.href = url;
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => URL.revokeObjectURL(url));
+  </script>
+</body>
+</html>
