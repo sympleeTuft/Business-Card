@@ -3,9 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marie Lamarre · SympleeTuft Rugs</title>
+  <title>Marie Martine · SympleeTuft Rugs</title>
   <meta name="theme-color" content="#0b0b0c">
   <meta name="description" content="SympleeTuft Rugs — bespoke tufted rugs & framed textile art.">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:title" content="Marie Martine · SympleeTuft Rugs">
+  <meta property="og:description" content="Hand‑tufted rugs & frames by SympleeTuft.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="favicon.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Marie Martine · SympleeTuft Rugs">
+  <meta property="twitter:description" content="Hand‑tufted rugs & frames by SympleeTuft.">
+  <meta property="twitter:image" content="favicon.png">
   <style>
     :root {
       --bg:#0b0b0c;
@@ -23,9 +33,7 @@
       color: var(--text);
       background: radial-gradient(80vmax 60vmax at 20% -10%, #1a1b1f 0, var(--bg) 60%), #000;
     }
-
     .wrap { max-width:860px; margin:0 auto; padding:24px; }
-
     .card {
       border:1px solid var(--line);
       background: linear-gradient(180deg, #141418, #0d0e11);
@@ -35,8 +43,6 @@
       animation: fadeIn .5s ease both;
     }
     @keyframes fadeIn { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform:none; } }
-
-    /* Hero */
     .hero {
       display:grid;
       grid-template-columns: 96px 1fr auto;
@@ -48,12 +54,11 @@
         radial-gradient(220px 120px at 5% 10%, rgba(242,186,43,.08), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
     }
-    .logo { width:96px; height:96px; border-radius:16px; border:2px solid #2a2a30; display:grid; place-items:center; background:#111; color:var(--ink); font-weight:800; font-size:28px; }
+    .logo img { width:96px; height:96px; border-radius:16px; border:2px solid #2a2a30; object-fit:cover; background:#111; }
     .title h1 { margin:0; font-size:1.6rem; }
     .title .sub { color:var(--muted); margin-top:4px; }
     .badge { display:inline-flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
     .pill { border:1px solid #2a2a30; background:#15151a; color:#e8e9ee; border-radius:999px; padding:6px 10px; font-size:.9rem; }
-
     .cta { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
     .btn {
       appearance:none; border:1px solid #2a2a30; background:#17171d; color:#eef1f4;
@@ -62,25 +67,24 @@
     }
     .btn:hover { transform: translateY(-1px); box-shadow:0 10px 30px rgba(0,0,0,.25); }
     .btn.accent { background: linear-gradient(180deg, #ffdf86, var(--ink)); color:#121214; border-color:#d9a521; }
-
-    /* Sections */
     .sections { display:grid; gap:0; }
-    section { padding:18px 24px; border-bottom:1px solid var(--line); }
+    section { padding:18px 24px; border-bottom:1px dashed #24252b; position:relative; }
+    section:after { content:''; position:absolute; right:24px; top:26px; width:10px; height:10px; border-right:2px solid #3a3b41; border-bottom:2px solid #3a3b41; transform: rotate(-45deg); opacity:.6; }
     section h2 { margin:0 0 8px; font-size:1.05rem; letter-spacing:.02em; color:#f6d991; }
     .kv { display:grid; grid-template-columns: 160px 1fr; gap:12px; }
     .kv .k { color:#b7bdc6; }
     .grid-links { display:flex; gap:10px; flex-wrap:wrap; }
-    .link { border:1px solid #2a2a30; background:#17171d; border-radius:12px; padding:10px 12px; text-decoration:none; color:#e9edf2; }
+    .link { border:1px solid #2a2a30; background:#17171d; border-radius:12px; padding:10px 12px; text-decoration:none; color:#e9edf2; display:inline-flex; align-items:center; gap:8px; }
+    .link .chev { opacity:.6; }
     .link:hover { border-color:#3a3a45; }
-
     footer { padding:16px 24px; color:#9aa3ae; font-size:.9rem; }
     .small { font-size:.92rem; color:#cbd2db; line-height:1.5; }
-
-    /* Mobile */
+    .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:#14161a; color:#e9edf2; border:1px solid #2a2f39; padding:10px 14px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); opacity:0; pointer-events:none; transition:opacity .25s ease; }
+    .toast.show { opacity:1; }
     @media (max-width:640px) {
       .hero { grid-template-columns: 72px 1fr; }
       .cta { grid-column: 1 / -1; justify-content:flex-start; }
-      .logo { width:72px; height:72px; border-radius:12px; font-size:22px; }
+      .logo img { width:72px; height:72px; border-radius:12px; }
       .kv { grid-template-columns: 120px 1fr; }
     }
   </style>
@@ -89,9 +93,9 @@
   <div class="wrap">
     <div class="card">
       <header class="hero">
-        <div class="logo" aria-label="SympleeTuft logo">ST</div>
+        <div class="logo"><img src="sympleeTuft%20Logo.jpeg" alt="SympleeTuft logo"></div>
         <div class="title">
-          <h1>Marie Lamarre</h1>
+          <h1>Marie Martine</h1>
           <div class="sub">Founder / Textile Artist · SympleeTuft Rugs</div>
           <div class="badge">
             <span class="pill">Bespoke tufted rugs</span>
@@ -109,9 +113,8 @@
         <section aria-labelledby="contact">
           <h2 id="contact">Contact</h2>
           <div class="kv">
-            <div class="k">Email</div><div><a class="link" href="mailto:art@sympleeTuft.com">art@sympleeTuft.com</a></div>
-            <div class="k">Phone</div><div><a class="link" href="tel:609-610-4386">609-610-4386</a></div>
-            <div class="k">Website</div><div><a class="link" href="https://sympleetuft.com" target="_blank" rel="noopener">https://sympleetuft.com</a></div>
+            <div class="k">Email</div><div><button class="link" data-copy="art@sympleeTuft.com">art@sympleeTuft.com <span class="chev">›</span></button></div>
+            <div class="k">Website</div><div><a class="link" href="https://sympleetuft.com" target="_blank" rel="noopener">https://sympleetuft.com <span class="chev">›</span></a></div>
           </div>
         </section>
 
@@ -132,7 +135,7 @@
         <section aria-labelledby="social">
           <h2 id="social">Social media</h2>
           <div class="grid-links">
-            <a class="link" href="https://instagram.com/sympleetuft" target="_blank" rel="noopener" aria-label="Instagram">Instagram @sympleetuft</a>
+            <a class="link" href="https://instagram.com/sympleetuft" target="_blank" rel="noopener" aria-label="Instagram">Instagram @sympleetuft <span class="chev">›</span></a>
           </div>
         </section>
       </div>
@@ -143,15 +146,33 @@
     </div>
   </div>
 
+  <div class="toast" id="toast">Copied to clipboard</div>
+
   <script>
-    // Generate the vCard download from inline data (no server needed)
-    const vcardText = 'BEGIN:VCARD\nVERSION:3.0\nN:Lamarre;Marie;;;\nFN:Marie Lamarre\nORG:SympleeTuft Rugs\nTITLE:Founder / Textile Artist\nTEL;TYPE=cell:609-610-4386\nEMAIL:art@sympleeTuft.com\nURL:https://sympleetuft.com\nURL:https://instagram.com/sympleetuft\nEND:VCARD';
+    // vCard download (no phone number)
+    const vcardText = 'BEGIN:VCARD\nVERSION:3.0\nN:Martine;Marie;;;\nFN:Marie Martine\nORG:SympleeTuft Rugs\nTITLE:Founder / Textile Artist\nEMAIL:art@sympleeTuft.com\nURL:https://sympleetuft.com\nURL:https://instagram.com/sympleetuft\nEND:VCARD';
     const blob = new Blob([vcardText], {type: 'text/vcard;charset=utf-8'});
     const url = URL.createObjectURL(blob);
-    const a = document.getElementById('addContact');
-    a.href = url;
-    // Cleanup on page unload
+    document.getElementById('addContact').href = url;
     window.addEventListener('beforeunload', () => URL.revokeObjectURL(url));
+
+    // Tap-to-copy for email
+    const toast = document.getElementById('toast');
+    function showToast(msg) {
+      toast.textContent = msg || 'Copied';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1500);
+    }
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(btn.getAttribute('data-copy'));
+          showToast('Copied: ' + btn.getAttribute('data-copy'));
+        } catch (e) {
+          showToast('Copy not allowed');
+        }
+      });
+    });
   </script>
 </body>
 </html>
