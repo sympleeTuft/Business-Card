@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sympleeTUFT • Digital Card</title>
+  <meta name="description" content="Digital business card for SympleeTuft Rugs – links, contact, and downloadable vCard." />
+  <style>
+    :root{ --bg:#0f0f12; --card:#15161a; --text:#eef0f3; --muted:#a8b0bb; --accent:#f5c542; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:radial-gradient(60vw 60vw at 10% -10%,#1e1f25 0,#0f0f12 60%);color:var(--text);display:flex;min-height:100svh;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:720px;background:linear-gradient(180deg,#181a20,#121317);border:1px solid #23252d;border-radius:24px;box-shadow:0 20px 80px rgba(0,0,0,.45);overflow:hidden}
+    .hero{display:grid;gap:18px;padding:28px 28px 12px;grid-template-columns:80px 1fr;align-items:center}
+    .avatar{width:80px;height:80px;border-radius:18px;background:#222;border:2px solid #2e313a;display:grid;place-items:center;font-weight:700}
+    h1{font-size:1.6rem;margin:0}
+    .sub{color:var(--muted);margin-top:4px}
+    .brand{display:inline-flex;gap:8px;align-items:center;margin-top:6px}
+    .brand .pill{background:#1f2026;border:1px solid #2b2e38;color:#d9dde3;padding:6px 10px;border-radius:999px;font-size:.85rem}
+    .bio{padding:0 28px 8px;color:#c7cbd2;line-height:1.6}
+    .buttons{display:grid;gap:10px;padding:14px 28px 24px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+    .btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid #2a2d36;background:#1b1d24;color:#e9edf2;text-decoration:none;font-weight:600}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+    .btn.accent{background:linear-gradient(180deg,#ffe08a,#f7c84e);color:#121317;border-color:#f2ba2b}
+    .grid{display:grid;gap:14px;padding:0 28px 24px}
+    .grid .row{display:flex;gap:10px;flex-wrap:wrap}
+    .tag{font-size:.85rem;color:#cfd5de;background:#1b1d24;border:1px solid #2b2f39;border-radius:999px;padding:6px 10px}
+    footer{padding:18px 28px;color:#9aa3ae;border-top:1px solid #23262f;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <section class="hero">
+      <div class="avatar">ST</div>
+      <div>
+        <h1>Marie Lamarre</h1>
+        <div class="sub">Textile Artist • Founder @ SympleeTuft Rugs</div>
+        <div class="brand">
+          <span class="pill">sympleeTUFT</span>
+          <span class="pill">Bespoke tufted rugs & frames</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio">
+      Hand‑tufted rugs and framed textile art with bold lines, playful color, and a soulful vibe. Every piece is designed, tufted, and finished by hand.
+    </section>
+
+    <section class="buttons">
+      <a class="btn accent" href="#" download="sympleetuft.vcf" id="vcfLink">Download Contact (vCard)</a>
+      <a class="btn" href="mailto:art@sympleeTuft.com" target="_blank" rel="noopener">Email</a>
+      <a class="btn" href="tel:609-610-4386">Call/Text</a>
+      <a class="btn" href="https://instagram.com/sympleetuft" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://sympleetuft.com" target="_blank" rel="noopener">Website / Shop</a>
+      <a class="btn" href="https://maps.apple.com/?q=New+Jersey" target="_blank" rel="noopener">Based in NJ</a>
+    </section>
+
+    <footer>
+      <strong>How to use this page (free):</strong>
+      <ol>
+        <li>Upload this file to GitHub Pages.</li>
+        <li>Create a QR code pointing to your hosted URL.</li>
+        <li>Share or print the QR on your cards, stickers, or invoices.</li>
+      </ol>
+    </footer>
+  </main>
+
+  <script>
+    const vcardText = `BEGIN:VCARD\nVERSION:3.0\nN:Lamarre;Marie;;;\nFN:Marie Lamarre\nORG:SympleeTuft Rugs\nTITLE:Founder / Textile Artist\nTEL;TYPE=cell:609-610-4386\nEMAIL:art@sympleeTuft.com\nURL:https://sympleetuft.com\nEND:VCARD`;
+    const dataUri = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcardText);
+    document.getElementById('vcfLink').setAttribute('href', dataUri);
+  </script>
+</body>
+</html>
